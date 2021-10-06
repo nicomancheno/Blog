@@ -16,3 +16,230 @@
 
     --bs: 0.25em 025em 075em rgba(0, 0, 0, 0.25), 0.125m, .125em, 0.25em rgba(0, 0, 0, 0.15);
 }
+
+@media(min-width: 800px){
+    :root{
+        --fs-h1: 4.5rem;
+        --fs-h2: 3.75rem;
+        --fs-h3: 1.5rem;
+        --fs-body: 1rem;
+
+    }
+}
+
+/* General Styles */
+
+body{
+    background: var(--clr-light);
+    color: var(--clr-dark);
+    margin: 0;
+    font-family: var(--ff-primary);
+    font-size: var(--fs-body);
+    line-height: 1.6;
+}
+
+section{
+    padding: 5rem 2rem;
+}
+
+strong{
+    font-weight: var(--fw-bold);
+}
+
+img{
+    max-width: 100%;
+}
+
+/* Typography */
+
+h1, h2, h3 {
+    line-height: 1.2;
+    margin: 0;
+}
+h1{font-size: var(--fs-h1);}
+h2{font-size: var(--fs-h2);}
+h3{font-size: var(--fs-h3);}
+
+/* Nav bar */
+
+header{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.nav{
+    position: fixed;
+    background: var(--clr-dark);
+    color: var(--clr-light);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index:100;
+    transform: translateX(100%);
+    transition: transform 250ms cubic-bezier(0.5, 0, 0.5, 1);
+}
+
+.nav_list{
+    list-style: none;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}    
+
+.nav-toggle{
+    padding: 0.5em;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    position: absolute;
+    right: 1em;
+    top: 1em;
+    z-index: 1000;
+}
+
+.hamburger{
+    display: block;
+    position: relative;
+}
+
+.hamburger, .hamburger::before, .hamburger::after {
+    background: var(--clr-dark);
+    width: 2em;
+    height: 4px;
+    border-radius: 1em;
+    transition: transform 250ms ease-in-out;
+}
+
+.hamburger::before, .hamburger::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+.hamburger::before{top: 8px;}
+.hamburger::after{bottom: 8px;}
+
+            /* When clicked in Hamburger */
+            .nav-open .nav{
+                transform: translateX(0);
+            }
+
+            .nav-open .nav-toggle{
+                position: fixed;
+            }
+
+            .nav-open .hamburger{
+                background: var(--clr-accent);
+                transform: rotate(.625);
+            }
+
+            .nav-open .hamburger::before{
+                transform: rotate(90deg) translateX(-6px);
+                background: var(--clr-accent);
+            }
+
+            .nav-open .hamburger::after{
+                opacity: 0;
+            }
+
+/* About Me */
+
+.about-me{
+    position: relative;
+    left: 25px;
+    right: auto;
+    max-width: 300px;
+    border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+.about-me_image{
+    box-shadow: var(--bs);
+    order: 1;
+}
+
+.section_subtitle--about{
+    color: var(--clr-accent);
+    order: 2;
+}
+.about-me__body{
+    order: 3;
+}
+
+/* @media (min-width: 600px){
+    .about-me{
+        display: grid;
+        grid-template-columns: 1fr 200px;
+        grid-template-areas: "title img" "subtitle img" "text img";
+        grid-column-gap: 2em;
+    }
+
+    .section_title--about{
+        grid-area: title;
+    }
+
+    .section_subtitle--about{
+        grid-column: 1 / -1;
+        grid-row: 2;
+        position: relative;
+        left: -2em;
+        width: calc(100% + 4em);
+        padding-left: 2em;
+        padding-right: calc(200px + 2em);
+    }
+
+    .about-me_image {
+        grid-area: img;
+        position: relative;
+        z-index: 2;
+    }
+} */
+
+/* Footer */
+
+.footer{
+    background: #111;
+    color: var(--clr-accent);
+    text-align: center;
+    padding: 2.5em 0;
+}
+
+.footer a{
+    color:inherit;
+    text-decoration: none;
+}
+
+.footer.link{
+    font-size: var(--fs-h3);
+    font-weight: var(--fw-bold);
+}
+
+
+.footer.link:hover, .social-list_link:hover {
+    opacity: 0.7;
+}
+
+.footer.link:hover{
+    text-decoration: underline;
+}
+
+.social-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 2em 0 0;
+    padding: 0;
+}
+
+.social-list_item {
+    margin: 0 0.5em;
+}

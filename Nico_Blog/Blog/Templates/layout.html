@@ -1,0 +1,92 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Nico Blog</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.css"
+        integrity="sha384-N2iN5915qtatuGTKTlZrrZAd7a+ir8E75VZ6/8SsXIMzmPmqDmu+40C3POMtF6Vn" crossorigin="anonymous">
+        <link rel="stylesheet" href="static/styles.css">
+
+    </head>
+    <body>
+        <header>
+            <div>
+                <img src="" alt="">
+            </div>
+            <button class="nav-toggle">
+                <span class="hamburger"></span>
+
+             </button>
+            <nav class="nav">
+                <ul class="nav_list">
+                    <li class="nav_item"><a href="#" class="nav_link">Home</a></li>
+                    <li class="nav_item"><a href="#" class="nav_link">My Posts</a></li>
+                    <li class="nav_item"><a href="#" class="nav_link">About me</a></li>
+                    <li class="nav_item"><a href="#work" class="nav_link">My Work</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!--Intro-->
+
+        <section>
+            <div>
+                <h3>Hello I am Nico</h3>
+            </div>
+            <div>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Mollitia praesentium unde tenetur reiciendis iusto ad, 
+                voluptas pariatur dolores quibusdam optio voluptates cupiditate laborum iure sunt,
+                recusandae assumenda! Cum, ipsam esse.
+            </div>
+        </section>
+
+        <!--About Me-->
+        
+        <section class="about-me" id="about">
+            <img src={% static "images/003.jpg" %} alt="Nico relaxed" class="about-me_image">
+            <h2 class="section_title section_title--about">Hey, I'm Nico</h2>
+            <p class="section_subtitle section_subtitle--about">Web Developer based in Palma de Mallorca</p>
+
+            <div class="about-me__body">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam rutrum sagittis ligula eu pharetra.
+                    Mauris eu nisi vestibulum ex maximus tincidunt vel ac urna. Cras et tincidunt justo. Mauris ac augue 
+                    sodales, dignissim purus ut, sodales tellus. Curabitur eu tempus risus, eget pretium augue. Praesent eu 
+                    consectetur arcu. Cras nisl elit, rhoncus eget lorem vitae, consequat efficitur eros. Etiam pellentesque 
+                    tellus a magna gravida, vitae molestie mauris porttitor. Cras nunc justo, commodo quis posuere feugiat, 
+                    egestas quis lorem. Duis purus tellus, dapibus vel semper non, vehicula a nibh.</p>
+            </div>
+
+            
+
+        </section>
+
+        <!--Footer-->
+        <footer class="footer">
+            <a href="mailto:nicolasmancheno21@gmail.com" class="footer-link">nicolasmancheno21@hotmail.com</a>
+            <ul class="social-list">
+                <li class="social-list_item">
+                    <a class="social-list_link"href="#">
+                        <i class="fab fa-twitter-square"></i>
+                    </a>
+                </li>
+                <li class="social-list_item">
+                    <a class="social-list_link"href="#">
+                        <i class="fab fa-facebook-square"></i>
+                    </a>
+                </li>
+                <li class="social-list_item">
+                    <a class="social-list_link"href="#">
+                        <i class="fab fa-instagram-square"></i>
+                    </a>
+                </li>
+            </ul>
+        </footer>
+
+    </body>
+</html>
