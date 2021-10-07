@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %} Blog Post {% endblock %}
+
+{% block body %}
+<section>
+    <h3>{{post.title}}</h3><br>
+
+    {{post.author.first_name}}
+
+    <p>{{post.body | safe }}</p>
+        
+</section>
+<section>
+    <h3>Comments...</h3>
+    <hr>
+    <br>
+    {% if not  post.comments.all %}
+        No Comments Yet
+    {% else %}
+        {% for comment in post.comments.all %}
+
+            <strong>
+                {{comment.name}} - 
+                {{comment.timestamp}}
+            </strong><br>
+
+                {{comment.body}}
+            <br>
+        {% endfor %}
+
+        {{form}}
+
+    {% endif %}
+</section>
+
+{% endblock %}

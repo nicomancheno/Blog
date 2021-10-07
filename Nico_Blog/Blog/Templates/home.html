@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %} Home {% endblock %}
+
+{% block body %}
+
+
+        <!--Intro-->
+
+        <section>
+            <div>
+                <h3>Hello I am Nico</h3>
+            </div>
+            <div>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Mollitia praesentium unde tenetur reiciendis iusto ad, 
+                voluptas pariatur dolores quibusdam optio voluptates cupiditate laborum iure sunt,
+                recusandae assumenda! Cum, ipsam esse.
+            </div>
+        </section>
+
+        <div class="main-section">
+            <section class="last-post">
+
+               <a href="{% url 'blogpost' posts.last.id %}">{{posts.last.title}}</a><br>
+                        {{posts.last.author.first_name}} {{posts.last.author.last_name}}<br>
+                        {{posts.last.body | slice:":200" | safe }}
+            
+            </section>
+    
+            <!--About Me-->
+            <section class="about-me" id="about">
+                <h2 class="section_title section_title--about">Hey, I'm Nico</h2>
+                <p class="section_subtitle section_subtitle--about">Web Developer based in Palma de Mallorca</p>
+                <img src={% static "images/003.jpg" %} alt="Nico relaxed" class="about-me_image">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam rutrum sagittis ligula eu pharetra.
+                    Mauris eu nisi vestibulum ex maximus tincidunt vel ac urna. Cras et tincidunt justo. Mauris ac augue 
+                    sodales, dignissim purus ut, sodales tellus. Curabitur eu tempus risus, eget pretium augue. Praesent eu 
+                    consectetur arcu. Cras nisl elit, rhoncus eget lorem vitae, consequat efficitur eros. Etiam pellentesque 
+                    tellus a magna gravida, vitae molestie mauris porttitor. Cras nunc justo, commodo quis posuere feugiat, 
+                    egestas quis lorem. Duis purus tellus, dapibus vel semper non, vehicula a nibh.</p>  
+            </section>
+        </div>
+
+        <section class="blog-posts">
+            {% for post in posts %}
+
+                <div class="post_item">
+                    <a href="{% url 'blogpost' post.id %}"></a>
+                    <h4>{{post.title}} by {{post.author.first_name}} {{post.author.last_name}}</h4>
+                    <!-- <img src="#" alt="" class="post_image"> -->
+                    <p>{{post.body | slice:":200" | safe }}</p>
+                </div>
+                    
+            {% endfor%}
+        </section> 
+{% endblock %}
