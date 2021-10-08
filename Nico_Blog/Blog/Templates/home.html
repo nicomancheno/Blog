@@ -47,8 +47,7 @@
             {% for post in posts %}
 
                 <div class="post_item">
-                    <a href="{% url 'blogpost' post.id %}"></a>
-                    <h4>{{post.title}} by {{post.author.first_name}} {{post.author.last_name}}</h4>
+                    <a href="{% url 'blogpost' post.id %}"><h4>{{post.title}} by {{post.author.first_name}} {{post.author.last_name}}</h4></a>
                     <!-- <img src="#" alt="" class="post_image"> -->
                     <p>{{post.body | slice:":200" | safe }}</p>
                 </div>

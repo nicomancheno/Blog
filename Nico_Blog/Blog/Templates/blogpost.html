@@ -27,12 +27,22 @@
             </strong><br>
 
                 {{comment.body}}
-            <br>
+            
         {% endfor %}
 
-        {{form}}
-
     {% endif %}
+    <hr>
+    <br>
+
+    <form method="POST" class="comment_form">
+        {% csrf_token %}
+
+        {{form}}
+        <br>
+        <button type="submit" class="submit_button">Post Comment</button>
+    </form>
+
+    
 </section>
 
 {% endblock %}
